@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerController">
+   <children>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar prefWidth="772.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#loadLayout" text="Load Layout" />
+                        <MenuItem mnemonicParsing="false" onAction="#saveLayout" text="Save Layout" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="How To Use" />
+                        <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox>
+                     <children>
+                        <HBox maxHeight="40.0" minHeight="40.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="scanButton" alignment="CENTER" mnemonicParsing="false" onAction="#scanWindows" text="🗘">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Button>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Scanned Windows" wrappingWidth="173.50286865234375" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox spacing="5.0">
+                           <children>
+                              <TextField fx:id="searchText" prefHeight="25.0" prefWidth="189.0" promptText="search for windows..." HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <ListView fx:id="scannedWindowsListView" prefHeight="200.0" prefWidth="436.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" maxWidth="83.0" minWidth="83.0" prefHeight="755.0" prefWidth="83.0" spacing="50.0">
+                     <children>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#addToLayout" prefHeight="25.0" prefWidth="73.0" text="add &gt;&gt;" />
+                        <Button alignment="CENTER" layoutX="38.0" layoutY="375.0" mnemonicParsing="false" onAction="#removeFromLayout" text="&lt;&lt; remove" />
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox layoutX="20.0" layoutY="20.0">
+                     <children>
+                        <HBox maxHeight="40.0" minHeight="40.0" spacing="10.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#applyLayout" text="Apply Layout" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Layout Editor" wrappingWidth="173.50286865234375" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox />
+                        <HBox spacing="5.0">
+                           <children>
+                              <TextField fx:id="changeText" prefHeight="25.0" prefWidth="201.0" promptText="change text of window..." HBox.hgrow="ALWAYS" />
+                              <Button layoutX="397.0" layoutY="10.0" mnemonicParsing="false" onAction="#saveChange" prefHeight="25.0" prefWidth="49.0" text="Save" />
+                           </children>
+                        </HBox>
+                        <ListView fx:id="layoutWindowsListView" prefHeight="200.0" prefWidth="436.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
